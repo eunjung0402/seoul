@@ -27,18 +27,18 @@ $(function(){
   });
 
   // 상단 메인 슬라이드 일시정지 이벤트
-  var sw=0;
+  let topSw=0;
   $('.sc_visual .btn_nav.pause').click(function(){
-    if(sw==0){
+    if(topSw==0){
       $(this).removeClass('pause');
       $(this).addClass('restart');
       mainSlide.autoplay.stop();
-      sw = 1;
+      topSw = 1;
     }else{
         $(this).addClass('pause');
         $(this).removeClass('restart');
         mainSlide.autoplay.start();
-        sw = 0;
+        topSw = 0;
     }
   })
 
@@ -83,18 +83,18 @@ $(function(){
     });
 
     // 하단 3개 슬라이드 일시정지 이벤트
-    var sw=0;
+    let btSw=0;
     $('.sub-slide .btn_nav.pause').click(function(){
-      if(sw==0){
+      if(btSw==0){
         $(this).removeClass('pause');
         $(this).addClass('restart');
         subswiper.autoplay.stop();
-        sw = 1;
+        btSw = 1;
       }else{
           $(this).addClass('pause');
           $(this).removeClass('restart');
           subswiper.autoplay.start();
-          sw = 0;
+          btSw = 0;
       }
     })
 
@@ -126,7 +126,7 @@ $(function(){
 
 // 픽스버튼 스크롤 위치 이벤트
 $(window).scroll(function () {
-  var tmp = $(this).scrollTop();
+  let tmp = $(this).scrollTop();
   console.log(tmp);
   if(tmp>10) {
     $('.fix_btn_box').addClass("down");
